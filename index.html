@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	
+
+	
+	<title> LiftCalc </title>
+</head>
+
+
+<body>
+	<div class="container">
+		<h1>LiftCalc</h1>
+		<h4>LiftCalc well be an online Web application. Specifically a calculator that tell you the Ideal weight and rep range you want to use based on your fitness goals.</h4>
+	</div>
+
+	<div class="container">
+	<form>
+	  
+	  <div class="form-group">
+	    <label for="oneRepMax">Enter 1RM Weight</label>
+	    <p>Enter the Heavist amount you can lift one time. If you don't know try to approximate. i.e. if your Bench Press max is 315, enter 315. </p>
+	    <input type="number" class="form-control" id="oneRepMax" placeholder="In lbs">
+	  </div>
+		<div class="btn-group">
+		  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		    What's your goal? <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu">
+		    <li><a href="#">Strength</a></li>
+		    <li><a href="#">Mass</a></li>
+		    <li><a href="#">Burn Fat</a></li>
+		   </ul>
+		</div>
+		<div>
+	  <button onclick="setMax()" type="button" class="btn btn-primary">Set</button>
+	  	</div>
+	</form>
+
+	</div>
+
+	<div class="container"><p>"Your one rep max: " <span class="repOut" ></span></p></div>        
+
+   
+
+   <div class="container">
+		<table >
+	    <thead>
+	        <tr>
+	            <th scope="col">%</th>
+	            <th>Weight</th>
+	            <th>Reps</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+	        <tr>
+	            <th scope="row">100</th>
+	            <td> <span class="repOut"></span></td>
+	            <td>Data</td>
+	        </tr>
+	        <tr>
+	            <th scope="row">90</th>
+	            <td> <span id="ninetyPerc"></span></td>
+	            <td>Data</td>
+	        </tr>
+	        <tr>
+	            <th scope="row">80</th>
+	            <td><span id="eightyPerc"></span></td>
+	            <td>Data</td>
+	        </tr>
+	        <tr>
+	            <th scope="row">70</th>
+	            <td><span id="seventyPerc"></span></td>
+	            <td>Data</td>
+	        </tr>
+	        <tr>
+	            <th scope="row">60</th>
+	            <td><span id="sixtyPerc"></span></td>
+	            <td>Data</td>
+	        </tr>
+	        <tr>
+	            <th scope="row">50</th>
+	            <td><span id="fiftyPerc"></span></td>
+	            <td>Data</td>
+	        </tr>
+	        <tr>
+	            <th scope="row">40</th>
+	            <td><span id="fortyPerc"></span></td>
+	            <td>Data</td>
+	        </tr>
+	    </tbody>
+		</table>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+		<!-- JS file -->
+	 <script type = "text/javascript" src ="js/app.js"></script>
+</body>
+
+</html>
