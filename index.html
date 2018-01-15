@@ -35,41 +35,54 @@
 		</div>
 	
 	<div class="row container">
+	
 	<div class="col-sm-6 butSect">
-	`<form >
+	`
+	
+	 	
 	 	<div class="form-group">
-	    <label for="oneRepMax">Enter 1RM Weight</label>
-	    <input type="number" class="form-control" id="oneRepMax" placeholder="In lbs">
-	  </div>
+		    <label for="oneRepMax">Enter 1RM Weight</label>
+		    <input type="number" maxlength="3" class="form-control" id="oneRepMax" placeholder="In lbs">
+	  	</div>
 	  
 		</div>
-
-		<div class="btn-group col-sm-6 butSect">
-		  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		    What's your goal? <span class="caret"></span>
-		  </button>
-		  <ul class="dropdown-menu">
-		    <li><a href="#" onclick="setStrength()">Strength</a></li>
-		    <li><a href="#" onclick="setMass()">Mass</a></li>
-		    <li><a href="#" onclick="setBurn()">Burn Fat</a></li>
-		   </ul>
-		</div>
-		
-
-
-		<div class="col-sm-6 butSect" >
-	  <button onclick="setMax()" type="button" class="btn btn-primary">Set</button>
+<!-- 
+		<div class="butSect" >
+	  		<button onclick="setMax()" type="button" class="btn btn-primary">Set</button>
 	  	</div>
-	  	</form>
-	
+	  	 -->
+	<div id="lower" class="container col-sm-6" style="display: inline-flex; align-items: center; justify-content: center;">
+		<div class="btn-group" style="display: inline-flex;">
+			  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			    What's your goal? <span class="caret"></span>
+			  </button>
+			  <ul class="dropdown-menu">
+			    <li><a href="#" onclick="setStrength()">Strength</a></li>
+			    <li><a href="#" onclick="setMass()">Mass</a></li>
+			    <li><a href="#" onclick="setBurn()">Burn Fat</a></li>
+			   </ul>
+			  <div class="butSect" >
+	  			<button onclick="setMax()" type="button" class="btn btn-primary">Set</button>
+	  		</div>
+		</div>
+	</div>
 	
 
 	</div>
 
 	<div class="container">
-		<div class="col-sm-6 stats"><p>Your one rep max:   <span class="repOut statread" ></span></p></div>
+	
+	  	
+		
+		<div class="col-sm-6 stats"><p>Your max is:  
+		 <span class="repOut stats"></span></p></div>
+
+
 		<div class="col-sm-6 stats"><p>Your goal is:  
 		 <span id="strengthCalc" class="stats" ></span></p></div>
+		
+
+		
 	</div>
 
 
