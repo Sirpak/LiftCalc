@@ -12,6 +12,8 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
+
 	
 
 	
@@ -19,85 +21,112 @@
 </head>
 
 
-<body>
-	<div class="container">
+<body class="container">
+	<div class="container fitheader">
 		<h1>LiftCalc</h1>
-		<h4>LiftCalc well be an online Web application. Specifically a calculator that tell you the Ideal weight and rep range you want to use based on your fitness goals.</h4>
+		<h4>LiftCalc is an online WebFit application. Specifically, a calculator that will tell you the ideal weight and rep range you want to use based on your fitness goals.</h4>
 	</div>
 
 	<div class="container">
-	<form>
+	
 	  
-	  <div class="form-group">
+		<div class="container">
+			<p>Enter the Heaviest amount you can lift one time. If you don't know, try to approximate. i.e. if your Bench Press max is 315lb, enter 315. If you can curl a 60lb dumbbell one time, enter 60. The calculator will till you how much weight to pick up, how many reps you should aim for, and how much rest to take on that exercise. </p>
+		</div>
+	
+	<div class="row container">
+	<div class="col-sm-6 butSect">
+	`<form >
+	 	<div class="form-group">
 	    <label for="oneRepMax">Enter 1RM Weight</label>
-	    <p>Enter the Heavist amount you can lift one time. If you don't know try to approximate. i.e. if your Bench Press max is 315, enter 315. </p>
 	    <input type="number" class="form-control" id="oneRepMax" placeholder="In lbs">
 	  </div>
-		<div class="btn-group">
+	  
+		</div>
+
+		<div class="btn-group col-sm-6 butSect">
 		  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		    What's your goal? <span class="caret"></span>
 		  </button>
 		  <ul class="dropdown-menu">
-		    <li><a href="#">Strength</a></li>
-		    <li><a href="#">Mass</a></li>
-		    <li><a href="#">Burn Fat</a></li>
+		    <li><a href="#" onclick="setStrength()">Strength</a></li>
+		    <li><a href="#" onclick="setMass()">Mass</a></li>
+		    <li><a href="#" onclick="setBurn()">Burn Fat</a></li>
 		   </ul>
 		</div>
-		<div>
+		
+
+
+		<div class="col-sm-6 butSect" >
 	  <button onclick="setMax()" type="button" class="btn btn-primary">Set</button>
 	  	</div>
-	</form>
+	  	</form>
+	
+	
 
 	</div>
 
-	<div class="container"><p>"Your one rep max: " <span class="repOut" ></span></p></div>        
+	<div class="container">
+		<div class="col-sm-6 stats"><p>Your one rep max:   <span class="repOut statread" ></span></p></div>
+		<div class="col-sm-6 stats"><p>Your goal is:  
+		 <span id="strengthCalc" class="stats" ></span></p></div>
+	</div>
+
 
    
 
    <div class="container">
-		<table >
+		<table class="table fittable">
 	    <thead>
 	        <tr>
 	            <th scope="col">%</th>
 	            <th>Weight</th>
 	            <th>Reps</th>
+	            <th>Rest</th>
 	        </tr>
 	    </thead>
 	    <tbody>
-	        <tr>
+	        <tr id="rowhundred">
 	            <th scope="row">100</th>
-	            <td> <span class="repOut"></span></td>
-	            <td>Data</td>
+	            <td> <span class="repOut"></span> lbs</td>
+	            <td><span class="reps"></td>
+	            <td><span class="rest"></td>	
 	        </tr>
-	        <tr>
-	            <th scope="row">90</th>
-	            <td> <span id="ninetyPerc"></span></td>
-	            <td>Data</td>
+	        <tr id="rowninety">
+	            <th scope="row" >90</th>
+	            <td> <span id="ninetyPerc"></span> lbs</td>
+	            <td><span class="reps"></td>
+	            <td><span class="rest"></td>	
 	        </tr>
-	        <tr>
+	        <tr id="roweighty">
 	            <th scope="row">80</th>
-	            <td><span id="eightyPerc"></span></td>
-	            <td>Data</td>
+	            <td><span id="eightyPerc"></span> lbs</td>
+	            <td><span class="reps"></td>
+	            <td><span class="rest"></td>
 	        </tr>
-	        <tr>
+	        <tr id="rowseventy">
 	            <th scope="row">70</th>
-	            <td><span id="seventyPerc"></span></td>
-	            <td>Data</td>
+	            <td><span id="seventyPerc"></span> lbs</td>
+	            <td><span class="reps"></td>
+	            <td><span class="rest"></td>
 	        </tr>
-	        <tr>
+	        <tr id="rowsixty">
 	            <th scope="row">60</th>
-	            <td><span id="sixtyPerc"></span></td>
-	            <td>Data</td>
+	            <td><span id="sixtyPerc"></span> lbs</td>
+	            <td><span class="reps"></td>
+	            <td><span class="rest"></td>
 	        </tr>
-	        <tr>
+	        <tr id="rowfifty">
 	            <th scope="row">50</th>
-	            <td><span id="fiftyPerc"></span></td>
-	            <td>Data</td>
+	            <td><span id="fiftyPerc"></span> lbs</td>
+	            <td><span class="reps"></td>
+	            <td><span class="rest"></td>
 	        </tr>
-	        <tr>
+	        <tr id="rowforty">
 	            <th scope="row">40</th>
-	            <td><span id="fortyPerc"></span></td>
-	            <td>Data</td>
+	            <td><span id="fortyPerc"></span> lbs</td>
+	            <td><span class="reps"></td>
+	            <td><span class="rest"></td>
 	        </tr>
 	    </tbody>
 		</table>
